@@ -1,4 +1,4 @@
-                      TempEst v1.5.1 2016
+                      TempEst v1.6.0 2024
                 Temporal Signal Investigation Tool
                               by
                        Andrew Rambaut
@@ -8,7 +8,7 @@
                       a.rambaut@ed.ac.uk
 
 UNIX / Mac OS X / Linux / Windows README 
-a.rambaut@ed.ac.uk - 22 August 2016
+a.rambaut@ed.ac.uk - 2 Sept 2024
 
 Contents:
 1) INTRODUCTION

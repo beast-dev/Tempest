@@ -101,7 +101,7 @@
 
     <property name="version" value="1.6.0" />
     <property name="packaging_tools" value="packaging_tools" />
-    <property name="release_dir" value="release_tempest" />
+    <property name="release_dir" value="release" />
     <property name="name" value="TempEst" />
 
     <property name="common_dir" value="${release_dir}/common" />
@@ -141,7 +141,7 @@
                   outfile="${Windows_package_dir}/${name} v${version}.exe"
                   fileVersion="${version}.0"
                   txtFileVersion="${version}"
-                  productVersion="${version}.0"
+                  productVersion="${version }.0"
                   txtProductVersion="${version}"/>
 
         <zip destfile="${release_dir}/${name} v${version}.zip">
