@@ -42,8 +42,8 @@ import java.util.*;
 public class TemporalRooting {
 
     public enum RootingFunction {
-        HEURISTIC_RESIDUAL_MEAN_SQUARED("heuristic residual mean squared"),
         RESIDUAL_MEAN_SQUARED("residual mean squared"),
+        HEURISTIC_RESIDUAL_MEAN_SQUARED("heuristic residual mean squared"),
         //        SUM_RESIDUAL_SQUARED("sum squared residuals"),
         CORRELATION("correlation"),
         R_SQUARED("R squared");
