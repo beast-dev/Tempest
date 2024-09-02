@@ -22,7 +22,7 @@ Contents:
 ___________________________________________________________________________
 1) INTRODUCTION
 
-TempEst is a tool for investigating the temporal signal and 'clocklikeness' of molecular phylogenies. It can read and analyse contemporaneous trees (where all sequences have been collected at the same time) and dated-tip trees (where sequences have been collected at different dates). It is designed for analysing trees that have not been inferred under a molecular-clock assumption to see how valid this assumption may be. It can also root the tree at the position that is likely to be the most compatible with the assumption of the molecular clock.
+TempEst is a tool for investigating the temporal signal and 'clocklikeness' of molecular phylogenies. It can read and analyse contemporaneous trees (where all sequences have been collected at the same time) and dated-tip trees (where sequences have been collected at different dates). It is designed for analysing trees that have not been inferred under a molecular-clock assumption to see how valid this assumption may be. For contemporaneous tips can also root the tree at the position that is likely to be the most compatible with the assumption of the molecular clock.
 
 This software was formerly known as "Path-O-Gen".
 ___________________________________________________________________________
@@ -49,6 +49,10 @@ Finally, you can export the tree (rooted as displayed) using the "Export Tree...
 
 ___________________________________________________________________________
 4) VERSION HISTORY
+
+---Version 1.6.0 2 September 2024---
+
+* Added ability to find the root for contemporaneous tips by minimising the root-to-tip variance.
 
 ---Version 1.5.1 22 August 2016---
 
