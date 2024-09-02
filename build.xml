@@ -99,7 +99,7 @@
         </jar>
     </target>
 
-    <property name="version" value="1.5.3" />
+    <property name="version" value="1.6.0" />
     <property name="packaging_tools" value="packaging_tools" />
     <property name="release_dir" value="release_tempest" />
     <property name="name" value="TempEst" />
