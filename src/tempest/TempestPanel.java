@@ -144,7 +144,7 @@ public class TempestPanel extends JPanel implements Exportable {
 
         controlPanel1.add(panel3);
 
-        final JComboBox rootingFunctionCombo = new JComboBox(TemporalRooting.RootingFunction.values());
+        rootingFunctionCombo = new JComboBox<>(TemporalRooting.RootingFunction.values());
 
         JPanel panel4 = new JPanel(new BorderLayout(0,0));
         panel4.setOpaque(false);
@@ -412,9 +412,8 @@ public class TempestPanel extends JPanel implements Exportable {
         bestFittingRootTree = null;
         if (rootingCheck.isSelected()) {
             rootingCheck.setSelected(false);
-        } else {
-            setupPanel();
         }
+        setupPanel();
     }
 
     public JComponent getExportableComponent() {
@@ -485,12 +484,19 @@ public class TempestPanel extends JPanel implements Exportable {
             }
 
             if (temporalRooting.isContemporaneous()) {
-                if (tabbedPane.getSelectedIndex() == 2) {
-                    tabbedPane.setSelectedIndex(1);
+
+//                rootingCheck.setText("Best-fitting root (contemporaneous tips)");
+                rootingFunctionCombo.setEnabled(false);
+                if (tabbedPane.getSelectedIndex() == 3 || tabbedPane.getSelectedIndex() == 4) {
+                    tabbedPane.setSelectedIndex(2);
                 }
-                tabbedPane.setEnabledAt(2, false);
+                tabbedPane.setEnabledAt(3, false);
+                tabbedPane.setEnabledAt(4, false);
             } else {
-                tabbedPane.setEnabledAt(2, true);
+//                rootingCheck.setText("Best-fitting root (dated tips)");
+                rootingFunctionCombo.setEnabled(true);
+                tabbedPane.setEnabledAt(3, true);
+                tabbedPane.setEnabledAt(4, true);
             }
 
             RootedTree jtree = dr.evolution.tree.TreeUtils.asJeblTree(currentTree);
@@ -902,6 +908,7 @@ public class TempestPanel extends JPanel implements Exportable {
         }
     }
 
-    private JCheckBox rootingCheck;
+    private final JCheckBox rootingCheck;
 
+    private final JComboBox<TemporalRooting.RootingFunction> rootingFunctionCombo;
 }

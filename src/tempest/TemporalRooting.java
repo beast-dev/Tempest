@@ -77,8 +77,8 @@ public class TemporalRooting {
     public TemporalRooting(TaxonList taxa) {
         this.taxa = taxa;
 
-        dates = new HashMap<String, Double>();
-        precisions = new HashMap<String, Double>();
+        dates = new HashMap<>();
+        precisions = new HashMap<>();
 
         dateMin = Double.MAX_VALUE;
         dateMax = -Double.MAX_VALUE;
@@ -302,7 +302,7 @@ public class TemporalRooting {
                                  final RootingFunction rootingFunction,
                                  final boolean forcePositiveRate) {
 
-        if (rootingFunction == RootingFunction.RESIDUAL_MEAN_SQUARED) {
+        if (!isContemporaneous() && rootingFunction == RootingFunction.RESIDUAL_MEAN_SQUARED) {
             return findAnalyticalLocalRoot(tree, dates, rootingFunction);
         }
 
@@ -336,7 +336,7 @@ public class TemporalRooting {
 
                 double score;
 
-                if (!contemporaneous) {
+                if (!isContemporaneous()) {
                     Regression r = new Regression(dates, y);
 
                     switch (rootingFunction) {
@@ -478,6 +478,7 @@ public class TemporalRooting {
         
         return r.getResidualMeanSquared();
     }
+
 
     public double getRootToTipDistance(Tree tree, NodeRef node) {
         double distance = 0;
